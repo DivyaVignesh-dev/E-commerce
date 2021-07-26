@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Admin-->
+        <scene sceneID="L1N-Sx-og9">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="Admin" id="sZc-FP-s1v" customClass="AdminhomeViewController" customModule="Admin_E_Commerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qgl-xY-0Fi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="2zd-1R-OHa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-dq-akg">
+                                <rect key="frame" x="10" y="88" width="394" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jy3-4Y-j5o">
+                                    <size key="itemSize" width="144" height="194"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sZc-FP-s1v" id="Vj3-IK-9wO"/>
+                                    <outlet property="delegate" destination="sZc-FP-s1v" id="gNd-pH-rmP"/>
+                                </connections>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-bw-N1S">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VcL-7r-6Jc" firstAttribute="trailing" secondItem="2zd-1R-OHa" secondAttribute="trailing" id="0Yu-tf-1eX"/>
+                            <constraint firstItem="gfH-bw-N1S" firstAttribute="centerX" secondItem="Qgl-xY-0Fi" secondAttribute="centerX" id="4v4-Jh-Oy5"/>
+                            <constraint firstItem="gfH-bw-N1S" firstAttribute="centerY" secondItem="Qgl-xY-0Fi" secondAttribute="centerY" id="7cx-yH-fgA"/>
+                            <constraint firstItem="2zd-1R-OHa" firstAttribute="top" secondItem="VcL-7r-6Jc" secondAttribute="top" id="9p1-Bb-RLT"/>
+                            <constraint firstAttribute="bottom" secondItem="7P2-dq-akg" secondAttribute="bottom" id="CGc-W5-QYG"/>
+                            <constraint firstItem="VcL-7r-6Jc" firstAttribute="trailing" secondItem="7P2-dq-akg" secondAttribute="trailing" constant="10" id="DHk-cl-Ahx"/>
+                            <constraint firstItem="VcL-7r-6Jc" firstAttribute="bottom" secondItem="2zd-1R-OHa" secondAttribute="bottom" id="b37-U8-9xR"/>
+                            <constraint firstItem="2zd-1R-OHa" firstAttribute="leading" secondItem="VcL-7r-6Jc" secondAttribute="leading" id="ede-o0-3sx"/>
+                            <constraint firstItem="7P2-dq-akg" firstAttribute="top" secondItem="VcL-7r-6Jc" secondAttribute="top" id="sTW-Zc-rpp"/>
+                            <constraint firstItem="7P2-dq-akg" firstAttribute="leading" secondItem="VcL-7r-6Jc" secondAttribute="leading" constant="10" id="xAg-vU-YbZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VcL-7r-6Jc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Admin" id="lvg-7M-Dqp">
+                        <barButtonItem key="leftBarButtonItem" title="Login" id="6mG-gK-Irl">
+                            <color key="tintColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="loginAction:" destination="sZc-FP-s1v" id="xnz-30-Lul"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gfH-bw-N1S" id="ghY-OA-1EC"/>
+                        <outlet property="collectionView" destination="7P2-dq-akg" id="Mrr-eT-CAi"/>
+                        <outlet property="loginBtn" destination="6mG-gK-Irl" id="2iD-He-DZr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zb5-5q-BUC" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="115.84821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FHX-aH-gUR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6NM-CX-cxd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tWP-FE-gRc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sZc-FP-s1v" kind="relationship" relationship="rootViewController" id="2rc-KN-40m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZY-dD-ap5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_cat3" width="1500" height="1875"/>
+    </resources>
 </document>

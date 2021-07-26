@@ -45,7 +45,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Q6x-f2-kSg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43b-vz-52l">
                                         <rect key="frame" x="0.0" y="165" width="374" height="32"/>
@@ -53,8 +53,11 @@
                                         <state key="normal" title="Forgot Password?">
                                             <color key="titleColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgotpasswordAction:" destination="B9J-lH-4yX" eventType="touchUpInside" id="iGD-05-nBf"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXA-8P-DKl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXA-8P-DKl" customClass="RoundedButton" customModule="E_commerce" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="217" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -64,8 +67,11 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginnAction:" destination="B9J-lH-4yX" eventType="touchUpInside" id="aDc-hm-MfL"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geK-0Y-Mg3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geK-0Y-Mg3" customClass="RoundedButton" customModule="E_commerce" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="277" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.83529411764705885" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -79,7 +85,7 @@
                                             <segue destination="Teu-4q-xzp" kind="push" id="yNb-HF-SAg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdS-rL-qxx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdS-rL-qxx" customClass="RoundedButton" customModule="E_commerce" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="337" width="374" height="40"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -89,6 +95,9 @@
                                         <state key="normal" title="Continue as guest">
                                             <color key="titleColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createUser:" destination="B9J-lH-4yX" eventType="touchUpInside" id="mHi-Xh-VTt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -108,6 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="Giv-AS-wSB"/>
                     </view>
                     <navigationItem key="navigationItem" id="04a-TR-aYg"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="0nT-BC-5fm" id="SZM-qZ-hw8"/>
+                        <outlet property="emailTF" destination="OZf-j5-4uI" id="uRw-sC-mYh"/>
+                        <outlet property="passwordTf" destination="et5-pG-TCE" id="BrT-Zy-tud"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihL-Yv-JpA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +177,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh5-ju-ipX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh5-ju-ipX" customClass="RoundedButton" customModule="E_commerce" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="300" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
